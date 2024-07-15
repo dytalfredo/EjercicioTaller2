@@ -1,0 +1,32 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int factorial(int e){
+int fac=1;
+for (int i=1; i<=e; i++){
+fac= fac*i;
+}
+return fac;
+}
+
+float valorAb(float e){
+if(e<0){
+return e*-1;
+}else{
+return e;
+}
+}
+
+int main(){
+int num=0;
+float ab=0;
+cout<<"ingresa un número entero";
+cin >> num;
+cout<<"ingresa un número cualquiera";
+cin >> ab;
+cout <<"El factorial del número "<<num<<" es: "<< factorial(num) << endl;
+cout <<"El Valor absoluto del número "<<ab<<" es: "<< valorAb(ab) << endl;
+cout <<"Integrantes del equipo. Melary Morales, Darío Montero y Alfredo Mendoza"<<endl;
+
+}
