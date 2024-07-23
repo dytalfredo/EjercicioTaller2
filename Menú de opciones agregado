@@ -1,0 +1,148 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+void mostrarMensaje(string e){
+cout << e << endl;
+}
+
+int leerNumero(string e){
+int c =0;
+cout << e << endl;
+cin >> c;
+return c;
+}
+
+float leerFlotante(string e){
+float c =0;
+cout << e << endl;
+cin >> c;
+return c;
+}
+
+void imprimirEntero(string e, int i){
+cout << e << i << endl;
+}
+
+void imprimirFlotante(string e, float i){
+cout << e << i << endl;
+}
+
+
+int factorial(){
+bool seguir =true;
+int fac=1;
+int num=0;
+while(seguir){
+num= leerNumero("Ingresa un número para calcular su factorial");
+if (num<0){
+cout << "Debes ingresar un número >= 0" << endl;
+}else if(num==0){
+seguir=false;
+return fac;
+}else{
+for (int i=1; i<=num; i++){
+fac= fac*i;
+}
+seguir =false;
+return fac;
+}
+}
+
+}
+
+float valorAb(){
+float num=0.0;
+num= leerFlotante("Ingresa un número para calcular su Valor Absoluto");
+
+if(num<0){
+return num*-1;
+}else{
+return num;
+}
+}
+
+float promedio(){
+string control="";
+bool seguir = true;
+int contador =0;
+float acumulador = 0.0;
+float dato=0.0;
+while(seguir){
+dato= leerFlotante("Ingresé un dato para acumular y al final calcular promedio");
+contador = contador +1;
+acumulador = acumulador + dato;
+mostrarMensaje("Desea continuar sumando elementos? Escribe 's' para agregar otro elemento o 'n' para culminar la operación");
+cin >> control;
+
+
+if(control=="n")
+{
+seguir=false;
+}
+}
+return acumulador/contador;
+
+}
+
+
+
+
+
+
+
+
+int main(){
+int num=0;
+
+bool seguir= true;
+string control ="";
+
+while(seguir){
+mostrarMensaje("Bienvenidos, este programa tiene un menú que puede calcular valor absoluto, factorial o promedio lea el siguiente menú");
+mostrarMensaje("Ingresa el número 1 si quieres calcular Valor Absolutos");
+mostrarMensaje("Ingresa el número 2 si quieres calcular Factorial de un número");
+mostrarMensaje("Ingresa el número 3 si quieres calcular Promedio general");
+num = leerNumero("Ingresa un número según la opción que desees");
+
+switch ( num )
+      {
+         case 1:
+           
+           float valor;
+           valor = valorAb();
+           imprimirFlotante("El valor absoluto del número dado es = ", valor);
+            break;
+            
+         case 2:
+            
+           
+           int fac;
+           fac = factorial();
+           imprimirFlotante("El valor del factorial del número dado es = ", fac);
+            break;
+         case 3:
+         
+            float prom;
+            prom = promedio();
+            imprimirFlotante("El promedio general de los datos ingresados son = ", prom);
+            break;   
+         default:
+            cout << "ingresé un dato correcto" << endl;
+            break;
+      }
+      mostrarMensaje("Desea continuar realizando operaciones? Escribe 's' para agregar otro elemento o 'n' para culminar la operación");
+cin >> control;
+
+
+if(control=="n")
+{
+seguir=false;
+}
+      }
+      
+
+
+cout <<"Integrantes del equipo. Melary Morales, Darío Montero y Alfredo Mendoza"<<endl;
+return 0;
+} 
